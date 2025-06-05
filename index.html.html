@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twickets - Buy Tickets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .header-logo {
+            max-width: 30px;
+        }
+        .event-video {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .animated-gif {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            height: 30px;
+            background-color: #10b981;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            animation: pulse 2s infinite;
+            pointer-events: none;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .ticket-card {
+            transition: transform 0.2s;
+            position: relative;
+        }
+        .ticket-card:hover {
+            transform: scale(1.03);
+        }
+        .ticket-card.selected {
+            border: 2px solid #f59e0b;
+            background-color: #2d3748;
+        }
+        .disabled-option {
+            color: #a0a0a0;
+            background-color: #2d3748;
+        }
+        .best-seller {
+            position: relative;
+        }
+        .best-seller::before {
+            content: 'Best Seller';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            background-color: #f59e0b;
+            color: #1a202c;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .ticket-quantity {
+            font-size: 12px;
+            color: #9ca3af; /* Cinza claro para ser mais discreto */
+            margin-left: 4px;
+        }
+        .location-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-2 flex justify-between items-center shadow-md">
+        <div class="flex items-center space-x-2">
+            <img src="https://play-lh.googleusercontent.com/H7v8g_iysARRhRA2ogH76-HYrTiDXhMfiYxOoFwMH2syfaBfMqrnPDr07tfPJKZkkw=s48-rw" alt="Twickets Logo" class="header-logo">
+            <span class="text-white text-lg font-semibold">Twickets</span>
+        </div>
+        <div class="flex items-center">
+            <button class="text-white focus:outline-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-3">
+        <!-- Event Banner (Video) -->
+        <section class="mb-5 relative">
+            <video class="event-video" autoplay loop muted playsinline>
+                <source src="https://tendenciabotique.com.br/videos/0605.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="animated-gif">Buy Now</div>
+            <h1 class="text-xl font-bold mt-3">Oasis</h1>
+            <p class="text-sm text-gray-400 location-icon">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                Wembley Stadium, Wembley, UK
+            </p>
+        </section>
+
+        <!-- Date Selector -->
+        <section class="mb-5">
+            <h2 class="text-lg font-semibold mb-2">Select Date</h2>
+            <select id="eventDate" class="w-full p-2 bg-gray-700 text-white border-none rounded-md text-sm" onchange="checkDate()">
+                <option value="2025-07-25" disabled class="disabled-option">July 25, 2025 (Sold Out)</option>
+                <option value="2025-07-26" selected>July 26, 2025</option>
+                <option value="2025-07-30" disabled class="disabled-option">July 30, 2025 (Sold Out)</option>
+                <option value="2025-08-02" disabled class="disabled-option">August 02, 2025 (Sold Out)</option>
+                <option value="2025-08-03" disabled class="disabled-option">August 03, 2025 (Sold Out)</option>
+                <option value="2025-09-27" disabled class="disabled-option">September 27, 2025 (Sold Out)</option>
+                <option value="2025-09-28" disabled class="disabled-option">September 28, 2025 (Sold Out)</option>
+            </select>
+        </section>
+
+        <!-- Ticket Types -->
+        <section class="mb-5">
+            <h2 class="text-lg font-semibold mb-2">Select Ticket Type</h2>
+            <div class="space-y-3" id="ticketOptions">
+                <!-- Standing Admission -->
+                <div class="ticket-card best-seller bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Standing', 155, this)">
+                    <div>
+                        <h3 class="text-base font-bold inline-flex items-center">
+                            Standing Admission
+                            <span class="ticket-quantity">(2 tickets)</span>
+                        </h3>
+                        <p class="text-sm text-gray-400">Location: In front of the stage, on the grass, no fixed seating</p>
+                        <p class="text-sm text-gray-400">Features: Standing area, closest to the band, energetic vibe</p>
+                        <p class="text-blue-400 font-semibold">£155</p>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                </div>
+                <!-- Seated Ticket -->
+                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Seated', 170, this)">
+                    <div>
+                        <h3 class="text-base font-bold inline-flex items-center">
+                            Seated Ticket
+                            <span class="ticket-quantity">(2 tickets)</span>
+                        </h3>
+                        <p class="text-sm text-gray-400">Location: Sides and upper sections of the stadium</p>
+                        <p class="text-sm text-gray-400">Features: Numbered seats, elevated view, ideal for comfort</p>
+                        <p class="text-blue-400 font-semibold">£170</p>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                </div>
+                <!-- VIP Package -->
+                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('VIP', 430, this)">
+                    <div>
+                        <h3 class="text-base font-bold inline-flex items-center">
+                            VIP Package
+                            <span class="ticket-quantity">(3 tickets)</span>
+                        </h3>
+                        <p class="text-sm text-gray-400">Location: Premium seats with access to exclusive areas</p>
+                        <p class="text-sm text-gray-400">Features: Early entry, gifts, premium seats, VIP restrooms</p>
+                        <p class="text-blue-400 font-semibold">£430</p>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Button -->
+        <section>
+            <button id="checkoutBtn" class="w-full bg-green-600 text-white p-3 rounded-md text-sm hover:bg-blue-700 disabled:bg-gray-500" disabled>Proceed to Checkout</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-3 text-center">
+        <div class="space-x-4 mb-2">
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms & Conditions</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Anti-Spam Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Contact us</a>
+        </div>
+        <div class="flex justify-center mb-2">
+            <img src="https://www.star.org.uk/wp-content/uploads/2017/11/star_verification_dark.png" alt="STAR Verification" style="width: 160px; height: 67px;">
+        </div>
+        <p class="text-xs text-gray-500">© 2025-2025 Twickets Ltd. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let selectedTicket = null;
+        let selectedDate = '2025-07-26'; // Data padrão
+        let selectedCard = null;
+
+        function checkDate() {
+            selectedDate = document.getElementById('eventDate').value;
+            updateCheckoutButton();
+        }
+
+        function selectTicket(type, price, card) {
+            selectedTicket = { type, price };
+            if (selectedCard) {
+                selectedCard.classList.remove('selected');
+            }
+            card.classList.add('selected');
+            selectedCard = card;
+            updateCheckoutButton();
+        }
+
+        function updateCheckoutButton() {
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            if (selectedTicket && selectedDate) {
+                checkoutBtn.disabled = false;
+                checkoutBtn.onclick = () => {
+                    let checkoutUrl = '';
+                    switch (selectedTicket.type) {
+                        case 'Standing':
+                            checkoutUrl = 'https://book.stripe.com/14A28r1T33sFfSLb364AU0r';
+                            break;
+                        case 'Seated':
+                            checkoutUrl = 'https://book.stripe.com/aFa9ATcxH1kxgWP6MQ4AU0s';
+                            break;
+                        case 'VIP':
+                            checkoutUrl = 'https://book.stripe.com/eVqbJ1gNX4wJeOH0os4AU0t';
+                            break;
+                    }
+                    window.location.href = checkoutUrl;
+                };
+            } else {
+                checkoutBtn.disabled = true;
+            }
+        }
+
+        // Inicializa o botão com a data padrão
+        updateCheckoutButton();
+    </script>
+</body>
+</html>
