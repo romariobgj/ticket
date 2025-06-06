@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code -->
+   <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -13,6 +13,24 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '24789060374015950');
   fbq('track', 'PageView');
+
+  // Rastrear tempo gasto na página
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
+
+  // Rastrear cliques genéricos
+  document.addEventListener('click', function(e) {
+    fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
+  });
+
+  // Função para rastrear cliques específicos (ex.: botão "Buy Tickets")
+  function trackBuyTicketsClick() {
+    fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
+  }
 </script>
 <noscript>
   <img height="1" width="1" style="display:none"
