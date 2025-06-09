@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '24789060374015950');
-  fbq('track', 'PageView');
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '24789060374015950');
+    fbq('track', 'PageView');
 
-  // Rastrear tempo gasto na página
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
+    // Rastrear tempo gasto na página
+    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
+    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
+    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
+    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
+    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
+    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
 
-  // Rastrear cliques genéricos
-  document.addEventListener('click', function(e) {
-    fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
-  });
+    // Rastrear cliques genéricos
+    document.addEventListener('click', function(e) {
+        fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
+    });
 
-  // Função para rastrear cliques específicos (ex.: botão "Buy Tickets")
-  function trackBuyTicketsClick() {
-    fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
-  }
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=24789060374015950&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+    // Função para rastrear cliques específicos (ex.: botão "Buy Tickets")
+    function trackBuyTicketsClick() {
+        fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
+    }
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=24789060374015950&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twickets - Buy Tickets</title>
@@ -114,13 +114,24 @@
         }
         .ticket-quantity {
             font-size: 12px;
-            color: #9ca3af; /* Cinza claro para ser mais discreto */
+            color: #9ca3af;
             margin-left: 4px;
         }
         .location-icon {
             display: inline-flex;
             align-items: center;
             gap: 4px;
+        }
+        .timer-box {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 5px 10px;
+            border-radius: 3px;
+            text-align: center;
+            margin: 5px auto;
+            font-size: 12px;
+            font-weight: bold;
+            width: fit-content;
         }
         @media (min-width: 640px) {
             .container {
@@ -152,6 +163,8 @@
                 Your browser does not support the video tag.
             </video>
             <div class="animated-gif">Buy Now</div>
+            <!-- Timer -->
+            <div class="timer-box" id="timer">Ticket availability ends in: 01:27:06</div>
             <h1 class="text-xl font-bold mt-3">Oasis</h1>
             <p class="text-sm text-gray-400 location-icon">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -216,6 +229,19 @@
                     </div>
                     <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
                 </div>
+                <!-- VIP Suite -->
+                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('VIP Suite', 1620, this)">
+                    <div>
+                        <h3 class="text-base font-bold inline-flex items-center">
+                            VIP Suite
+                            <span class="ticket-quantity">(12 tickets)</span>
+                        </h3>
+                        <p class="text-sm text-gray-400">Location: Private premium suite with the best stadium view</p>
+                        <p class="text-sm text-gray-400">Features: Exclusive VIP box for your group, early entry, private restroom, dedicated service, premium seating and gifts</p>
+                        <p class="text-blue-400 font-semibold">£1,620</p>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                </div>
             </div>
         </section>
 
@@ -276,6 +302,9 @@
                         case 'VIP':
                             checkoutUrl = 'https://book.stripe.com/eVqbJ1gNX4wJeOH0os4AU0t';
                             break;
+                        case 'VIP Suite':
+                            checkoutUrl = 'https://book.stripe.com/6oU28r9lv2oB4a3b364AU0z';
+                            break;
                     }
                     window.location.href = checkoutUrl;
                 };
@@ -283,6 +312,32 @@
                 checkoutBtn.disabled = true;
             }
         }
+
+        // Temporizador
+        function startTimer() {
+            // Definir o tempo inicial a partir de 11:53 PM -03, 08 de junho de 2025 (hora atual do sistema)
+            const now = new Date("2025-06-08T23:53:00-03:00");
+            const endTime = new Date(now.getTime() + (1 * 3600 + 27 * 60 + 6) * 1000); // Adiciona 1h 27m 6s (5226 segundos)
+            const timerElement = document.getElementById('timer');
+            // Definir o tempo inicial como 1:27:06 no carregamento
+            let timeLeft = 5226; // 1 hora, 27 minutos e 6 segundos em segundos
+            timerElement.textContent = `Ticket availability ends in: ${Math.floor(timeLeft / 3600).toString().padStart(2, '0')}:${Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0')}:${(timeLeft % 60).toString().padStart(2, '0')}`;
+            const interval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    timerElement.textContent = "Ticket availability ends in: 00:00:00";
+                    return;
+                }
+                let hours = Math.floor(timeLeft / 3600);
+                let minutes = Math.floor((timeLeft % 3600) / 60);
+                let seconds = timeLeft % 60;
+                timerElement.textContent = `Ticket availability ends in: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Inicia o temporizador ao carregar a página
+        window.onload = startTimer;
 
         // Inicializa o botão com a data padrão
         updateCheckoutButton();
