@@ -36,6 +36,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16946894799"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16946894799');
+    </script>
+    <!-- End Google Tag Manager -->
     <!-- SEO Meta Tags -->
     <title>Twickets - Buy Oasis Concert Tickets</title>
     <meta name="description" content="Buy official Oasis Live '25 tickets for Wembley Stadium, London on July 26, 2025. Standing, Seated, VIP, and Luxury Suite options available via Twickets.">
@@ -283,9 +292,11 @@
 
     <!-- Main Content -->
     <main class="container mx-auto p-3" lang="en">
-        <!-- Event Banner (Image) -->
+        <!-- Event Banner (Video) -->
         <section class="mb-5 relative">
-            <img src="https://jpimg.com.br/uploads/2024/08/5b41510c6d26fe411b9148c7acc21b5ad005e4e0-693x450.jpg" alt="Oasis Event Banner" class="event-banner">
+            <video src="https://romariobraga.com/videos/slidoasis.mp4" class="event-banner" autoplay loop muted playsinline>
+                Your browser does not support the video tag.
+            </video>
             <div class="animated-gif">Buy Now</div>
             <h1 class="text-xl font-bold mt-3">Oasis</h1>
             <p class="text-sm text-gray-400 location-icon">
@@ -436,6 +447,12 @@
                             break;
                     }
                     window.location.href = checkoutUrl;
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-16946894799',
+                        'value': price,
+                        'currency': 'GBP',
+                        'transaction_id': ''
+                    });
                 };
             } else {
                 checkoutBtn.disabled = true;
