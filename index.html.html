@@ -1,159 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '24789060374015950');
-    fbq('track', 'PageView');
-    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
-    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
-    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
-    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
-    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
-    setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
-    document.addEventListener('click', function(e) {
-        fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
-    });
-    function trackBuyTicketsClick() {
-        fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
-    }
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=24789060374015950&ev=PageView&noscript=1" alt="Facebook Pixel Tracking"/>
-    </noscript>
-    <!-- End Meta Pixel Code -->
+   <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '24789060374015950');
+  fbq('track', 'PageView');
 
+  // Rastrear tempo gasto na página
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
+  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
+
+  // Rastrear cliques genéricos
+  document.addEventListener('click', function(e) {
+    fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
+  });
+
+  // Função para rastrear cliques específicos (ex.: botão "Buy Tickets")
+  function trackBuyTicketsClick() {
+    fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
+  }
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=24789060374015950&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16946894799"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-16946894799');
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- SEO Meta Tags -->
-    <title>Twickets - Buy Oasis Concert Tickets</title>
-    <meta name="description" content="Buy official Oasis Live '25 tickets for Wembley Stadium, London on July 26, 2025. Standing, Seated, VIP, and Luxury Suite options available via Twickets.">
-    <meta name="keywords" content="Oasis concert tickets, Wembley Stadium tickets, Oasis Live 25, buy Oasis tickets London, Oasis 2025 tour, Twickets, Liam Gallagher, Noel Gallagher, concert tickets UK">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Twickets">
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Oasis Live '25 Tickets - Wembley Stadium | Twickets">
-    <meta property="og:description" content="Secure Oasis concert tickets for July 26, 2025 at Wembley Stadium, London. Buy now on Twickets!">
-    <meta property="og:image" content="https://jpimg.com.br/uploads/2024/08/5b41510c6d26fe411b9148c7acc21b5ad005e4e0-693x450.jpg">
-    <meta property="og:url" content="https://www.twickets.live/en/oasis-wembley-2025">
-    <meta property="og:type" content="website">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oasis Live '25 Tickets - Wembley Stadium | Twickets">
-    <meta name="twitter:description" content="Buy official Oasis tickets for July 26, 2025 at Wembley Stadium via Twickets.">
-    <meta name="twitter:image" content="https://jpimg.com.br/uploads/2024/08/5b41510c6d26fe411b9148c7acc21b5ad005e4e0-693x450.jpg">
-    <!-- Schema Markup for Event -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Oasis Live '25",
-      "description": "Oasis reunion concert at Wembley Stadium, London. Buy tickets for Standing, Seated, VIP, or Luxury Suite.",
-      "startDate": "2025-07-26T17:00:00+01:00",
-      "endDate": "2025-07-26T22:00:00+01:00",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "Wembley Stadium",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Wembley",
-          "addressLocality": "London",
-          "postalCode": "HA9 0WS",
-          "addressCountry": "UK"
-        }
-      },
-      "image": "https://jpimg.com.br/uploads/2024/08/5b41510c6d26fe411b9148c7acc21b5ad005e4e0-693x450.jpg",
-      "performer": {
-        "@type": "MusicGroup",
-        "name": "Oasis",
-        "sameAs": "https://en.wikipedia.org/wiki/Oasis_(band)"
-      },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Twickets",
-        "url": "https://www.twickets.live"
-      },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Standing Admission",
-          "price": "110",
-          "priceCurrency": "GBP",
-          "url": "https://book.stripe.com/14A28r1T33sFfSLb364AU0r",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-08-31"
-        },
-        {
-          "@type": "Offer",
-          "name": "Seated Ticket",
-          "price": "145",
-          "priceCurrency": "GBP",
-          "url": "https://book.stripe.com/aFa9ATcxH1kxgWP6MQ4AU0s",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-08-31"
-        },
-        {
-          "@type": "Offer",
-          "name": "VIP Package",
-          "price": "290",
-          "priceCurrency": "GBP",
-          "url": "https://book.stripe.com/eVqbJ1gNX4wJeOH0os4AU0t",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-08-31"
-        },
-        {
-          "@type": "Offer",
-          "name": "VIP Suite",
-          "price": "1620",
-          "priceCurrency": "GBP",
-          "url": "https://book.stripe.com/6oU28r9lv2oB4a3b364AU0z",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-08-31"
-        }
-      ]
-    }
-    </script>
+    <title>Twickets - Buy Tickets</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: #1a202c;
             color: #e2e8f0;
         }
         .header-logo {
             max-width: 30px;
         }
-        .event-banner {
+        .event-video {
             width: 100%;
             height: 180px;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
-            object-position: center;
         }
         .animated-gif {
             position: absolute;
@@ -181,16 +85,13 @@
         .ticket-card {
             transition: transform 0.2s;
             position: relative;
-            background-color: #2d3748;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
         }
         .ticket-card:hover {
             transform: scale(1.03);
         }
         .ticket-card.selected {
             border: 2px solid #f59e0b;
+            background-color: #2d3748;
         }
         .disabled-option {
             color: #a0a0a0;
@@ -211,63 +112,15 @@
             font-weight: bold;
             border-radius: 4px;
         }
-        .premium {
-            position: relative;
-        }
-        .premium::before {
-            content: 'Premium';
-            position: absolute;
-            top: -10px;
-            left: 0;
-            background-color: #10b981;
-            color: #1a202c;
-            padding: 2px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-        .luxury-suite {
-            position: relative;
-        }
-        .luxury-suite::before {
-            content: 'Luxury Suite';
-            position: absolute;
-            top: -10px;
-            left: 0;
-            background-color: #8b5cf6;
-            color: #1a202c;
-            padding: 2px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-        }
         .ticket-quantity {
             font-size: 12px;
-            color: #9ca3af;
+            color: #9ca3af; /* Cinza claro para ser mais discreto */
             margin-left: 4px;
         }
         .location-icon {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-        }
-        .ticket-card img {
-            vertical-align: middle;
-            margin-right: 0.25rem;
-            width: 16px;
-            height: 16px;
-        }
-        .seo-content {
-            display: none;
-            max-height: 200px;
-            overflow-y: auto;
-            background-color: #2d3748;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-        }
-        .seo-content.active {
-            display: block;
         }
         @media (min-width: 640px) {
             .container {
@@ -276,7 +129,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white" lang="en">
+<body class="bg-gray-900 text-white">
     <!-- Header -->
     <header class="bg-gray-800 p-2 flex justify-between items-center shadow-md">
         <div class="flex items-center space-x-2">
@@ -284,17 +137,18 @@
             <span class="text-white text-lg font-semibold">Twickets</span>
         </div>
         <div class="flex items-center">
-            <button class="text-white focus:outline-none" aria-label="Open menu">
+            <button class="text-white focus:outline-none">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto p-3" lang="en">
+    <main class="container mx-auto p-3">
         <!-- Event Banner (Video) -->
         <section class="mb-5 relative">
-            <video src="https://romariobraga.com/videos/slidoasis.mp4" class="event-banner" autoplay loop muted playsinline>
+            <video class="event-video" autoplay loop muted playsinline>
+                <source src="https://tendenciabotique.com.br/videos/0605.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="animated-gif">Buy Now</div>
@@ -308,7 +162,7 @@
         <!-- Date Selector -->
         <section class="mb-5">
             <h2 class="text-lg font-semibold mb-2">Select Date</h2>
-            <select id="eventDate" class="w-full p-2 bg-gray-700 text-white border-none rounded-md text-sm" onchange="checkDate()" aria-label="Select concert date">
+            <select id="eventDate" class="w-full p-2 bg-gray-700 text-white border-none rounded-md text-sm" onchange="checkDate()">
                 <option value="2025-07-25" disabled class="disabled-option">July 25, 2025 (Sold Out)</option>
                 <option value="2025-07-26" selected>July 26, 2025</option>
                 <option value="2025-07-30" disabled class="disabled-option">July 30, 2025 (Sold Out)</option>
@@ -324,91 +178,71 @@
             <h2 class="text-lg font-semibold mb-2">Select Ticket Type</h2>
             <div class="space-y-3" id="ticketOptions">
                 <!-- Standing Admission -->
-                <div class="ticket-card best-seller flex justify-between items-center" onclick="selectTicket('Standing', 110, this)">
+                <div class="ticket-card best-seller bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Standing', 155, this)">
                     <div>
                         <h3 class="text-base font-bold inline-flex items-center">
-                            Standing Admission (1 ticket)
-                            <span class="ticket-quantity"></span>
+                            Standing Admission
+                            <span class="ticket-quantity">(1 ticket)</span>
                         </h3>
                         <p class="text-sm text-gray-400">Location: In front of the stage, on the grass, no fixed seating</p>
                         <p class="text-sm text-gray-400">Features: Standing area, closest to the band, energetic vibe</p>
-                        <p class="text-blue-400 font-semibold"><img src="https://cdn-icons-png.flaticon.com/512/9691/9691297.png" alt="Libra Esterlina" class="w-4 h-4 inline-block mr-1">110</p>
+                        <p class="text-blue-400 font-semibold">£110</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700" aria-label="Select Standing Admission" onclick="trackBuyTicketsClick()">Select</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
                 </div>
                 <!-- Seated Ticket -->
-                <div class="ticket-card flex justify-between items-center" onclick="selectTicket('Seated', 145, this)">
+                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Seated', 170, this)">
                     <div>
                         <h3 class="text-base font-bold inline-flex items-center">
-                            Seated Ticket (1 ticket)
-                            <span class="ticket-quantity"></span>
+                            Seated Ticket
+                            <span class="ticket-quantity">(1 ticket)</span>
                         </h3>
                         <p class="text-sm text-gray-400">Location: Sides and upper sections of the stadium</p>
                         <p class="text-sm text-gray-400">Features: Numbered seats, elevated view, ideal for comfort</p>
-                        <p class="text-blue-400 font-semibold"><img src="https://cdn-icons-png.flaticon.com/512/9691/9691297.png" alt="Libra Esterlina" class="w-4 h-4 inline-block mr-1">145</p>
+                        <p class="text-blue-400 font-semibold">£145</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700" aria-label="Select Seated Ticket" onclick="trackBuyTicketsClick()">Select</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
                 </div>
                 <!-- VIP Package -->
-                <div class="ticket-card premium flex justify-between items-center" onclick="selectTicket('VIP', 290, this)">
+                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('VIP', 430, this)">
                     <div>
                         <h3 class="text-base font-bold inline-flex items-center">
-                            VIP Package (2 tickets)
-                            <span class="ticket-quantity"></span>
+                            VIP Package
+                            <span class="ticket-quantity">(2 tickets)</span>
                         </h3>
                         <p class="text-sm text-gray-400">Location: Premium seats with access to exclusive areas</p>
                         <p class="text-sm text-gray-400">Features: Early entry, gifts, premium seats, VIP restrooms</p>
-                        <p class="text-blue-400 font-semibold"><img src="https://cdn-icons-png.flaticon.com/512/9691/9691297.png" alt="Libra Esterlina" class="w-4 h-4 inline-block mr-1">290</p>
+                        <p class="text-blue-400 font-semibold">£290</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700" aria-label="Select VIP Package" onclick="trackBuyTicketsClick()">Select</button>
-                </div>
-                <!-- VIP Suite -->
-                <div class="ticket-card luxury-suite flex justify-between items-center" onclick="selectTicket('VIP Suite', 1620, this)">
-                    <div>
-                        <h3 class="text-base font-bold inline-flex items-center">
-                            VIP Suite (12 tickets)
-                            <span class="ticket-quantity"></span>
-                        </h3>
-                        <p class="text-sm text-gray-400">Location: Private premium suite with the best stadium view</p>
-                        <p class="text-sm text-gray-400">Features: Exclusive VIP box, early entry, private restroom, dedicated service</p>
-                        <p class="text-blue-400 font-semibold"><img src="https://cdn-icons-png.flaticon.com/512/9691/9691297.png" alt="Libra Esterlina" class="w-4 h-4 inline-block mr-1">1,620</p>
-                    </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700" aria-label="Select VIP Suite" onclick="trackBuyTicketsClick()">Select</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
                 </div>
             </div>
         </section>
 
         <!-- Checkout Button -->
         <section>
-            <button id="checkoutBtn" class="w-full bg-green-600 text-white p-3 rounded-md text-sm hover:bg-blue-700 disabled:bg-gray-500" disabled aria-label="Reserve Access to Oasis Concert">Reserve Access</button>
+            <button id="checkoutBtn" class="w-full bg-green-600 text-white p-3 rounded-md text-sm hover:bg-blue-700 disabled:bg-gray-500" disabled>Reserve Access</button>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 p-3 text-center" lang="en">
+    <footer class="bg-gray-800 p-3 text-center">
         <div class="space-x-4 mb-2">
-            <a href="https://www.twickets.live/en/terms" class="text-gray-400 hover:text-white text-sm">Terms & Conditions</a>
-            <a href="https://www.twickets.live/en/privacy" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-            <a href="https://www.twickets.live/en/cookies" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
-            <a href="https://www.twickets.live/en/antispam" class="text-gray-400 hover:text-white text-sm">Anti-Spam Policy</a>
-            <a href="https://www.twickets.live/en/contact" class="text-gray-400 hover:text-white text-sm">Contact us</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms & Conditions</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Anti-Spam Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm">Contact us</a>
         </div>
         <div class="flex justify-center mb-2">
-            <img src="https://www.star.org.uk/wp-content/uploads/2017/11/star_verification_dark.png" alt="STAR Verification Seal" style="width: 160px; height: 67px;">
-        </div>
-        <!-- Collapsible SEO Content Button -->
-        <div class="mb-2">
-            <button id="seoToggle" class="text-gray-400 hover:text-white text-sm underline focus:outline-none" aria-label="Toggle event information">More Event Info</button>
-            <div id="seoContent" class="seo-content">
-                <p class="text-sm text-gray-300">Buy official Oasis Live '25 concert tickets for Wembley Stadium, London on July 26, 2025. Featuring Liam and Noel Gallagher, this reunion tour offers Standing Admission (110), Seated Tickets (145), VIP Packages (290), and Luxury Suites (1,620). Twickets is the trusted resale platform for Oasis tickets, ensuring fair prices and secure transactions. Avoid unofficial sites like Viagogo or StubHub, as tickets may be voided. For accessible tickets, contact Wembley Stadium at <a href="mailto:POD@wembleystadium.com" class="text-blue-400 hover:underline">POD@wembleystadium.com</a> or call 0800 093 0824. Keywords: Oasis concert tickets, Wembley Stadium tickets, Oasis Live 25, buy Oasis tickets London, Oasis 2025 tour, Liam Gallagher, Noel Gallagher, concert tickets UK.</p>
-            </div>
+            <img src="https://www.star.org.uk/wp-content/uploads/2017/11/star_verification_dark.png" alt="STAR Verification" style="width: 160px; height: 67px;">
         </div>
         <p class="text-xs text-gray-500">© 2015-2025 Twickets Ltd. All rights reserved.</p>
     </footer>
 
     <script>
         let selectedTicket = null;
-        let selectedDate = '2025-07-26'; // Default date
+        let selectedDate = '2025-07-26'; // Data padrão
         let selectedCard = null;
 
         function checkDate() {
@@ -442,31 +276,15 @@
                         case 'VIP':
                             checkoutUrl = 'https://book.stripe.com/eVqbJ1gNX4wJeOH0os4AU0t';
                             break;
-                        case 'VIP Suite':
-                            checkoutUrl = 'https://book.stripe.com/6oU28r9lv2oB4a3b364AU0z';
-                            break;
                     }
                     window.location.href = checkoutUrl;
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-16946894799',
-                        'value': price,
-                        'currency': 'GBP',
-                        'transaction_id': ''
-                    });
                 };
             } else {
                 checkoutBtn.disabled = true;
             }
         }
 
-        // Toggle SEO content visibility
-        document.getElementById('seoToggle').addEventListener('click', function() {
-            const seoContent = document.getElementById('seoContent');
-            seoContent.classList.toggle('active');
-            this.textContent = seoContent.classList.contains('active') ? 'Hide Event Info' : 'More Event Info';
-        });
-
-        // Initialize checkout button with default date
+        // Inicializa o botão com a data padrão
         updateCheckoutButton();
     </script>
 </body>
