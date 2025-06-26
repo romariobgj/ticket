@@ -122,6 +122,11 @@
             align-items: center;
             gap: 4px;
         }
+        .ticket-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
         /* Custom responsive adjustments */
         @media (max-width: 640px) {
             .header-logo {
@@ -142,6 +147,10 @@
             }
             .event-video {
                 aspect-ratio: 4 / 3;
+            }
+            .ticket-details p {
+                font-size: 11px;
+                line-height: 1.4;
             }
         }
         @media (min-width: 768px) {
@@ -211,9 +220,11 @@
                             Standing Admission
                             <span class="ticket-quantity">(1 ticket)</span>
                         </h3>
-                        <p class="text-xs sm:text-sm text-gray-400">Location: In front of the stage, on the grass, no fixed seating</p>
-                        <p class="text-xs sm:text-sm text-gray-400">Features: Standing area, closest to the band, energetic vibe</p>
-                        <p class="text-blue-400 font-semibold text-sm sm:text-base">£110</p>
+                        <div class="ticket-details">
+                            <p class="text-xs sm:text-sm text-gray-400">Location: In front of the stage, on the grass, no fixed seating</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Features: Standing area, closest to the band, energetic vibe</p>
+                        </div>
+                        <p class="text-blue-400 font-semibold text-sm sm:text-base mt-2">£110</p>
                     </div>
                     <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
                 </div>
@@ -224,9 +235,11 @@
                             Seated Ticket
                             <span class="ticket-quantity">(1 ticket)</span>
                         </h3>
-                        <p class="text-xs sm:text-sm text-gray-400">Location: Sides and upper sections of the stadium</p>
-                        <p class="text-xs sm:text-sm text-gray-400">Features: Numbered seats, elevated view, ideal for comfort</p>
-                        <p class="text-blue-400 font-semibold text-sm sm:text-base">£145</p>
+                        <div class="ticket-details">
+                            <p class="text-xs sm:text-sm text-gray-400">Location: Sides and upper sections of the stadium</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Features: Numbered seats, elevated view, ideal for comfort</p>
+                        </div>
+                        <p class="text-blue-400 font-semibold text-sm sm:text-base mt-2">£145</p>
                     </div>
                     <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
                 </div>
@@ -237,9 +250,11 @@
                             VIP Package
                             <span class="ticket-quantity">(2 tickets)</span>
                         </h3>
-                        <p class="text-xs sm:text-sm text-gray-400">Location: Premium seats with access to exclusive areas</p>
-                        <p class="text-xs sm:text-sm text-gray-400">Features: Early entry, gifts, premium seats, VIP restrooms</p>
-                        <p class="text-blue-400 font-semibold text-sm sm:text-base">£290</p>
+                        <div class="ticket-details">
+                            <p class="text-xs sm:text-sm text-gray-400">Location: Premium seats with access to exclusive areas</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Features: Early entry, gifts, premium seats, VIP restrooms</p>
+                        </div>
+                        <p class="text-blue-400 font-semibold text-sm sm:text-base mt-2">£290</p>
                     </div>
                     <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
                 </div>
