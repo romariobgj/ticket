@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '24789060374015950');
-  fbq('track', 'PageView');
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '24789060374015950');
+        fbq('track', 'PageView');
 
-  // Rastrear tempo gasto na página
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
-  setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
+        // Track time spent on page
+        setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 30}), 30000);
+        setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 60}), 60000);
+        setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 90}), 90000);
+        setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 120}), 120000);
+        setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 150}), 150000);
+        setTimeout(() => fbq('trackCustom', 'TimeOnPage', {seconds: 180}), 180000);
 
-  // Rastrear cliques genéricos
-  document.addEventListener('click', function(e) {
-    fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
-  });
+        // Track generic clicks
+        document.addEventListener('click', function(e) {
+            fbq('trackCustom', 'CustomClick', {element: e.target.tagName});
+        });
 
-  // Função para rastrear cliques específicos (ex.: botão "Buy Tickets")
-  function trackBuyTicketsClick() {
-    fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
-  }
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=24789060374015950&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+        // Function to track specific clicks (e.g., "Buy Tickets" button)
+        function trackBuyTicketsClick() {
+            fbq('track', 'ViewContent', {content_name: 'Buy Tickets Button'});
+        }
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=24789060374015950&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twickets - Buy Tickets</title>
@@ -49,28 +49,28 @@
             color: #e2e8f0;
         }
         .header-logo {
-            max-width: 30px;
+            width: 24px;
         }
         .event-video {
             width: 100%;
-            height: 180px;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
         }
         .animated-gif {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 60px;
-            height: 30px;
+            top: 8px;
+            right: 8px;
+            width: 48px;
+            height: 24px;
             background-color: #10b981;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 8px;
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 4px;
@@ -87,7 +87,7 @@
             position: relative;
         }
         .ticket-card:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
         .ticket-card.selected {
             border: 2px solid #f59e0b;
@@ -103,18 +103,18 @@
         .best-seller::before {
             content: 'Best Seller';
             position: absolute;
-            top: -10px;
+            top: -8px;
             left: 0;
             background-color: #f59e0b;
             color: #1a202c;
-            padding: 2px 8px;
-            font-size: 12px;
+            padding: 2px 6px;
+            font-size: 10px;
             font-weight: bold;
             border-radius: 4px;
         }
         .ticket-quantity {
-            font-size: 12px;
-            color: #9ca3af; /* Cinza claro para ser mais discreto */
+            font-size: 10px;
+            color: #9ca3af;
             margin-left: 4px;
         }
         .location-icon {
@@ -122,47 +122,74 @@
             align-items: center;
             gap: 4px;
         }
-        @media (min-width: 640px) {
+        /* Custom responsive adjustments */
+        @media (max-width: 640px) {
+            .header-logo {
+                width: 20px;
+            }
+            .animated-gif {
+                width: 40px;
+                height: 20px;
+                font-size: 7px;
+            }
+            .ticket-card .flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .ticket-card button {
+                width: 100%;
+            }
+            .event-video {
+                aspect-ratio: 4 / 3;
+            }
+        }
+        @media (min-width: 768px) {
             .container {
-                max-width: 640px;
+                max-width: 720px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 960px;
             }
         }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
     <!-- Header -->
-    <header class="bg-gray-800 p-2 flex justify-between items-center shadow-md">
+    <header class="bg-gray-800 px-4 py-2 flex justify-between items-center shadow-md sticky top-0 z-10">
         <div class="flex items-center space-x-2">
             <img src="https://play-lh.googleusercontent.com/H7v8g_iysARRhRA2ogH76-HYrTiDXhMfiYxOoFwMH2syfaBfMqrnPDr07tfPJKZkkw=s48-rw" alt="Twickets Logo" class="header-logo">
-            <span class="text-white text-lg font-semibold">Twickets</span>
+            <span class="text-white text-base sm:text-lg font-semibold">Twickets</span>
         </div>
         <div class="flex items-center">
-            <button class="text-white focus:outline-none">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <button class="text-white focus:outline-none" aria-label="Menu">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto p-3">
+    <main class="container mx-auto px-4 py-6">
         <!-- Event Banner (Video) -->
-        <section class="mb-5 relative">
+        <section class="mb-6 relative">
             <video class="event-video" autoplay loop muted playsinline>
                 <source src="https://romariobraga.com/videos/slidoasis.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="animated-gif">Buy Now</div>
-            <h1 class="text-xl font-bold mt-3">Oasis</h1>
-            <p class="text-sm text-gray-400 location-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <h1 class="text-lg sm:text-xl md:text-2xl font-bold mt-3">Oasis</h1>
+            <p class="text-xs sm:text-sm text-gray-400 location-icon">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 Wembley Stadium, Wembley, UK
             </p>
         </section>
 
         <!-- Date Selector -->
-        <section class="mb-5">
-            <h2 class="text-lg font-semibold mb-2">Select Date</h2>
-            <select id="eventDate" class="w-full p-2 bg-gray-700 text-white border-none rounded-md text-sm" onchange="checkDate()">
+        <section class="mb-6">
+            <h2 class="text-base sm:text-lg font-semibold mb-2">Select Date</h2>
+            <select id="eventDate" class="w-full p-2 sm:p-3 bg-gray-700 text-white border-none rounded-md text-sm sm:text-base focus:ring-2 focus:ring-blue-600" onchange="checkDate()">
                 <option value="2025-07-25" disabled class="disabled-option">July 25, 2025 (Sold Out)</option>
                 <option value="2025-07-26" selected>July 26, 2025</option>
                 <option value="2025-07-30" disabled class="disabled-option">July 30, 2025 (Sold Out)</option>
@@ -174,75 +201,75 @@
         </section>
 
         <!-- Ticket Types -->
-        <section class="mb-5">
-            <h2 class="text-lg font-semibold mb-2">Select Ticket Type</h2>
+        <section class="mb-6">
+            <h2 class="text-base sm:text-lg font-semibold mb-2">Select Ticket Type</h2>
             <div class="space-y-3" id="ticketOptions">
                 <!-- Standing Admission -->
-                <div class="ticket-card best-seller bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Standing', 155, this)">
+                <div class="ticket-card best-seller bg-gray-700 p-3 sm:p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Standing', 155, this)">
                     <div>
-                        <h3 class="text-base font-bold inline-flex items-center">
+                        <h3 class="text-sm sm:text-base font-bold inline-flex items-center">
                             Standing Admission
                             <span class="ticket-quantity">(1 ticket)</span>
                         </h3>
-                        <p class="text-sm text-gray-400">Location: In front of the stage, on the grass, no fixed seating</p>
-                        <p class="text-sm text-gray-400">Features: Standing area, closest to the band, energetic vibe</p>
-                        <p class="text-blue-400 font-semibold">£110</p>
+                        <p class="text-xs sm:text-sm text-gray-400">Location: In front of the stage, on the grass, no fixed seating</p>
+                        <p class="text-xs sm:text-sm text-gray-400">Features: Standing area, closest to the band, energetic vibe</p>
+                        <p class="text-blue-400 font-semibold text-sm sm:text-base">£110</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                    <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
                 </div>
                 <!-- Seated Ticket -->
-                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Seated', 170, this)">
+                <div class="ticket-card bg-gray-700 p-3 sm:p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Seated', 170, this)">
                     <div>
-                        <h3 class="text-base font-bold inline-flex items-center">
+                        <h3 class="text-sm sm:text-base font-bold inline-flex items-center">
                             Seated Ticket
                             <span class="ticket-quantity">(1 ticket)</span>
                         </h3>
-                        <p class="text-sm text-gray-400">Location: Sides and upper sections of the stadium</p>
-                        <p class="text-sm text-gray-400">Features: Numbered seats, elevated view, ideal for comfort</p>
-                        <p class="text-blue-400 font-semibold">£145</p>
+                        <p class="text-xs sm:text-sm text-gray-400">Location: Sides and upper sections of the stadium</p>
+                        <p class="text-xs sm:text-sm text-gray-400">Features: Numbered seats, elevated view, ideal for comfort</p>
+                        <p class="text-blue-400 font-semibold text-sm sm:text-base">£145</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                    <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
                 </div>
                 <!-- VIP Package -->
-                <div class="ticket-card bg-gray-700 p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('VIP', 430, this)">
+                <div class="ticket-card bg-gray-700 p-3 sm:p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('VIP', 430, this)">
                     <div>
-                        <h3 class="text-base font-bold inline-flex items-center">
+                        <h3 class="text-sm sm:text-base font-bold inline-flex items-center">
                             VIP Package
                             <span class="ticket-quantity">(2 tickets)</span>
                         </h3>
-                        <p class="text-sm text-gray-400">Location: Premium seats with access to exclusive areas</p>
-                        <p class="text-sm text-gray-400">Features: Early entry, gifts, premium seats, VIP restrooms</p>
-                        <p class="text-blue-400 font-semibold">£290</p>
+                        <p class="text-xs sm:text-sm text-gray-400">Location: Premium seats with access to exclusive areas</p>
+                        <p class="text-xs sm:text-sm text-gray-400">Features: Early entry, gifts, premium seats, VIP restrooms</p>
+                        <p class="text-blue-400 font-semibold text-sm sm:text-base">£290</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">Select</button>
+                    <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
                 </div>
             </div>
         </section>
 
         <!-- Checkout Button -->
         <section>
-            <button id="checkoutBtn" class="w-full bg-green-600 text-white p-3 rounded-md text-sm hover:bg-blue-700 disabled:bg-gray-500" disabled>Reserve Access</button>
+            <button id="checkoutBtn" class="w-full bg-green-600 text-white p-3 sm:p-4 rounded-md text-sm sm:text-base hover:bg-blue-700 disabled:bg-gray-500" disabled onclick="trackBuyTicketsClick()">Reserve Access</button>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 p-3 text-center">
-        <div class="space-x-4 mb-2">
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms & Conditions</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Anti-Spam Policy</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Contact us</a>
+    <footer class="bg-gray-800 px-4 py-6 text-center">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-4">
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm">Terms & Conditions</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm">Cookie Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm">Anti-Spam Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm">Contact us</a>
         </div>
-        <div class="flex justify-center mb-2">
-            <img src="https://www.star.org.uk/wp-content/uploads/2017/11/star_verification_dark.png" alt="STAR Verification" style="width: 160px; height: 67px;">
+        <div class="flex justify-center mb-4">
+            <img src="https://www.star.org.uk/wp-content/uploads/2017/11/star_verification_dark.png" alt="STAR Verification" class="w-32 sm:w-40 h-auto">
         </div>
         <p class="text-xs text-gray-500">© 2015-2025 Twickets Ltd. All rights reserved.</p>
     </footer>
 
     <script>
         let selectedTicket = null;
-        let selectedDate = '2025-07-26'; // Data padrão
+        let selectedDate = '2025-07-26'; // Default date
         let selectedCard = null;
 
         function checkDate() {
@@ -265,6 +292,7 @@
             if (selectedTicket && selectedDate) {
                 checkoutBtn.disabled = false;
                 checkoutBtn.onclick = () => {
+                    trackBuyTicketsClick();
                     let checkoutUrl = '';
                     switch (selectedTicket.type) {
                         case 'Standing':
@@ -284,7 +312,7 @@
             }
         }
 
-        // Inicializa o botão com a data padrão
+        // Initialize checkout button with default date
         updateCheckoutButton();
     </script>
 </body>
