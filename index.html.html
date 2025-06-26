@@ -127,6 +127,23 @@
             flex-direction: column;
             gap: 4px;
         }
+        .select-icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #3b82f6;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+        .select-icon-btn:hover {
+            background-color: #2563eb;
+        }
+        .select-icon-btn svg {
+            width: 16px;
+            height: 16px;
+        }
         /* Custom responsive adjustments */
         @media (max-width: 640px) {
             .header-logo {
@@ -142,8 +159,13 @@
                 align-items: flex-start;
                 gap: 8px;
             }
-            .ticket-card button {
-                width: 100%;
+            .select-icon-btn {
+                width: 20px;
+                height: 20px;
+            }
+            .select-icon-btn svg {
+                width: 14px;
+                height: 14px;
             }
             .event-video {
                 aspect-ratio: 4 / 3;
@@ -226,7 +248,9 @@
                         </div>
                         <p class="text-blue-400 font-semibold text-sm sm:text-base mt-2">£110</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
+                    <button class="select-icon-btn" aria-label="Select Ticket">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </button>
                 </div>
                 <!-- Seated Ticket -->
                 <div class="ticket-card bg-gray-700 p-3 sm:p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('Seated', 170, this)">
@@ -241,7 +265,9 @@
                         </div>
                         <p class="text-blue-400 font-semibold text-sm sm:text-base mt-2">£145</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
+                    <button class="select-icon-btn" aria-label="Select Ticket">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </button>
                 </div>
                 <!-- VIP Package -->
                 <div class="ticket-card bg-gray-700 p-3 sm:p-4 rounded-lg shadow-sm flex justify-between items-center" onclick="selectTicket('VIP', 430, this)">
@@ -256,7 +282,9 @@
                         </div>
                         <p class="text-blue-400 font-semibold text-sm sm:text-base mt-2">£290</p>
                     </div>
-                    <button class="bg-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-blue-700">Select</button>
+                    <button class="select-icon-btn" aria-label="Select Ticket">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </button>
                 </div>
             </div>
         </section>
